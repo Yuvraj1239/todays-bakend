@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="static/CSS/style1.css">
+</head>
+<body>
+	<header>Medihelp</header>
+	<main>
+		<form action="/submit2" class="frm" method="POST">
+			<label>name</label>
+			<input type="text" name="name">
+			<label>age</label>
+			<input type="text" name ="age">
+			<lable>cause</lable>
+			<input type="text" name="cause">
+			<label for="dropdown">choose doctor</label>
+			<select name='doc'>
+				<option  value="drsajeevjohri">dr snajeev johri</option>
+				<option  value="drsktrivedi">dr sk trivedi</option>
+				<option  value="drrajatgore">dr rajat gore</option>
+			</select>
+			<input type="submit" name="" value="submition2">
+		</form>
+		<div>
+			<h1>{{data}}</h1>
+		</div>
+	</main>
+	<footer>copyright</footer>
+
+</body>
+</html>

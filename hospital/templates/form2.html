@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Location</title>
+</head>
+<body>
+    <h1>Get Live Location</h1>
+    <button id="getLocationButton">Get Location</button>
+    <p id="locationOutput"></p>
+
+    <script>
+        document.getElementById("getLocationButton").addEventListener("click", getLocation);
+
+        function getLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(showPosition, handleError);
+            } else {
+                document.getElementById("locationOutput").textContent = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            document.getElementById("locationOutput").textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+
+            // Send the location data to the Flask server using an HTTP request
+            sendLocationToServer(latitude, longitude);
+        }
+
+        function handleError(error) {
+            document.getElementById("locationOutput").textContent = `Error: ${error.message}`;
+        }
+
+        function sendLocationToServer(latitude, longitude) {
+            const data = {
+                latitude: latitude,
+                longitude: longitude
+            };
+
+            fetch('/upload_location', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        }
+    </script>
+    
+    <div>
+    	<p>{{data2}}</p>
+    </div>
+</body>
+</html>

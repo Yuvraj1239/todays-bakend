@@ -1,0 +1,81 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: cursive;
+	color: white;
+}
+body{
+	
+}
+header{
+	background-color: rgb(0, 0, 0);
+	padding: 0.01vh;
+	text-align: center;
+
+}
+main{
+	
+
+	height: 75vh;
+
+}
+footer{
+	background-color: white;
+	background-color: rgb(0, 0, 0);
+	height: 15vh;
+	padding: 0.11vh;
+	text-align: center;
+}
+.cards{
+	background-color: rgb(255, 255, 255 , 0.50);
+	height: 20vh;
+	width: 20vw;
+
+	margin: auto;
+	margin-top: 2vh;
+	font-family: cursive;
+	display: flex;
+	flex-direction: row;
+	border-radius: 0.5vh;
+	padding: 1vh;
+}
+a{
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+}
+.imageholder {
+  background-image: url("image1.gif");
+  background-repeat: no-repeat;
+  background-size: cover; /* or 'contain' depending on your preference */
+  height: 50vh;
+  width: 100%; /* or specify a width */
+  background-position: center; /* adjust position if necessary */
+}
+ul{
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	list-style: none;
+}
+.cardholder{
+	display: flex;
+	flex-direction: row;
+	background-image: url("img.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 25vh;
+}
+li{
+	margin: 10px;
+}
+.li:hover{
+	background-color: darkblue;
+
+
+}
+.cards:hover{
+	height: 20.5vh;
+	background-color: rgb(0,0,0,0.50);
+	width: 20.5vw;
+}
